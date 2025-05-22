@@ -1,0 +1,9 @@
+*
+!.husky/
+!public/
+!app.vue
+!index.html
+!nuxt.config.ts
+!package.json
+!pnpm-lock.yaml
+!tsconfig.json
