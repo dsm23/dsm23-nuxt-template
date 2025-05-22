@@ -21,5 +21,9 @@
     "vue": "^3.5.14",
     "vue-router": "^4.5.1"
   },
-  "packageManager": "pnpm@8.12.0+sha1.7134f9b8d0b70bc7a1954f47af52123cd2b2acce"
+  "packageManager": "pnpm@8.12.0+sha1.7134f9b8d0b70bc7a1954f47af52123cd2b2acce",
+  "devDependencies": {
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0"
+  }
 }
