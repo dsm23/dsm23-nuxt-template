@@ -7,6 +7,7 @@ pull_request_rules:
       - check-success=format
       - check-success=gitleaks
       - check-success=lint
+      - check-success=zizmor
     actions:
       review:
         type: APPROVE
@@ -18,6 +19,7 @@ pull_request_rules:
       - check-success=format
       - check-success=gitleaks
       - check-success=lint
+      - check-success=zizmor
     actions:
       review:
         type: APPROVE
@@ -29,6 +31,7 @@ pull_request_rules:
       - check-success=format
       - check-success=gitleaks
       - check-success=lint
+      - check-success=zizmor
       - "#approved-reviews-by>=1"
     actions:
       merge:
