@@ -5,6 +5,7 @@ pull_request_rules:
       - author=dsm23
       - check-success=build
       - check-success=format
+      - check-success=gitleaks
       - check-success=lint
     actions:
       review:
@@ -15,6 +16,7 @@ pull_request_rules:
       - author=renovate[bot]
       - check-success=build
       - check-success=format
+      - check-success=gitleaks
       - check-success=lint
     actions:
       review:
@@ -25,6 +27,7 @@ pull_request_rules:
     conditions:
       - check-success=build
       - check-success=format
+      - check-success=gitleaks
       - check-success=lint
       - "#approved-reviews-by>=1"
     actions:
