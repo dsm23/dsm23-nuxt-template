@@ -31,7 +31,7 @@
     "cz-conventional-changelog": "3.3.0",
     "prettier": "3.5.3",
     "prettier-plugin-css-order": "2.1.2",
-    "prettier-plugin-tailwindcss": "0.6.11",
+    "prettier-plugin-tailwindcss": "0.6.12",
     "typed-query-selector": "2.12.0"
   }
 }
