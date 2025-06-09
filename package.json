@@ -32,6 +32,7 @@
     "@total-typescript/ts-reset": "0.6.1",
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "3.3.0",
+    "lefthook": "1.11.13",
     "prettier": "3.5.3",
     "prettier-plugin-css-order": "2.1.2",
     "prettier-plugin-tailwindcss": "0.6.12",
