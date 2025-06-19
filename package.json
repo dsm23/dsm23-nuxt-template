@@ -35,7 +35,7 @@
     "lefthook": "1.11.14",
     "prettier": "3.5.3",
     "prettier-plugin-css-order": "2.1.2",
-    "prettier-plugin-tailwindcss": "0.6.12",
+    "prettier-plugin-tailwindcss": "0.6.13",
     "typed-query-selector": "2.12.0"
   }
 }
