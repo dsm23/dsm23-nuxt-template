@@ -16,7 +16,7 @@
     "@nuxt/eslint": "1.10.0",
     "@nuxt/fonts": "0.12.1",
     "@nuxt/icon": "2.1.0",
-    "@nuxt/ui": "4.1.0",
+    "@nuxt/ui": "4.2.1",
     "eslint": "9.39.1",
     "nuxt": "4.2.1",
     "typescript": "5.9.3",
