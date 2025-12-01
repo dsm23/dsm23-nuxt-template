@@ -1,5 +1,1 @@
-.nuxt
-node_modules
-coverage
-dist
 pnpm-lock.yaml
