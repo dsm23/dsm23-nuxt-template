@@ -8,8 +8,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "fmt": "prettier . --write",
-    "fmt.check": "prettier . --check",
+    "fmt": "oxfmt . --write",
+    "fmt.check": "oxfmt . --check",
     "lint": "eslint ."
   },
   "dependencies": {
@@ -28,13 +28,10 @@
     "@commitlint/cli": "20.3.0",
     "@commitlint/config-conventional": "20.3.0",
     "@commitlint/types": "20.2.0",
-    "@ianvs/prettier-plugin-sort-imports": "4.7.0",
     "@total-typescript/ts-reset": "0.6.1",
     "lefthook": "2.0.13",
+    "oxfmt": "0.36.0",
     "postcss": "8.5.6",
-    "prettier": "3.7.4",
-    "prettier-plugin-css-order": "2.2.0",
-    "prettier-plugin-tailwindcss": "0.7.2",
     "typed-query-selector": "2.12.0"
   }
 }
