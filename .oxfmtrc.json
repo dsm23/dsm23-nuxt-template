@@ -1,0 +1,49 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "printWidth": 80,
+  "ignorePatterns": ["pnpm-lock.yaml"],
+  "sortPackageJson": false,
+  "sortImports": {
+    "newlinesBetween": false,
+    "customGroups": [
+      {
+        "groupName": "vue-libs",
+        "elementNamePattern": ["vue", "vue-**"]
+      },
+      {
+        "groupName": "nuxt-libs",
+        "elementNamePattern": ["nuxt", "@nuxt/**"]
+      },
+      {
+        "groupName": "clsx-libs",
+        "elementNamePattern": ["clsx"]
+      },
+      {
+        "groupName": "vite-libs",
+        "elementNamePattern": ["vite", "vite-**", "@vite", "@vite-**"]
+      },
+      {
+        "groupName": "vitest-libs",
+        "elementNamePattern": ["vitest", "@vitest-**"]
+      }
+    ],
+    "groups": [
+      "vitest-libs",
+      "vue-libs",
+      "nuxt-libs",
+      "clsx-libs",
+      "vite-libs",
+      ["value-builtin", "type-builtin"],
+      ["value-external", "type-external"],
+      ["value-internal", "type-internal"],
+      ["value-parent", "value-sibling", "value-index"],
+      "unknown",
+      { "newlinesBetween": true },
+      "style"
+    ]
+  },
+  "sortTailwindcss": {
+    "functions": ["clsx", "cn", "cva", "cx"]
+  },
+  "vueIndentScriptAndStyle": true
+}

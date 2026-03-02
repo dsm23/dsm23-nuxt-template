@@ -1,16 +1,15 @@
 pre-commit:
   parallel: true
   commands:
-    prettier:
-      run: ./node_modules/.bin/prettier --check --ignore-unknown {staged_files}
+    oxfmt:
+      run: ./node_modules/.bin/oxfmt --check --no-error-on-unmatched-pattern {staged_files}
 
     eslint:
       run: ./node_modules/.bin/eslint {staged_files}
       glob:
         - "*.ts"
         - "*.js"
-        - "*.tsx"
-        - "*.jsx"
+        - "*.vue"
         - "*.md"
         - "*.mdx"
 
