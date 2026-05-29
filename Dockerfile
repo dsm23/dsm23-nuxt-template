@@ -1,45 +1,43 @@
 # syntax=docker.io/docker/dockerfile:1@sha256:87999aa3d42bdc6bea60565083ee17e86d1f3339802f543c0d03998580f9cb89
 
-FROM node:24.16.0-alpine@sha256:2bdb65ed1dab192432bc31c95f94155ca5ad7fc1392fb7eb7526ab682fa5bf14 AS base
+FROM ghcr.io/pnpm/pnpm:11.3.0@sha256:ea6c1901fea76b494c8de13f40b2e41ea31b4e63d6de2c4cdec368cc7eb72472 AS base
+FROM dhi.io/node:26.1.0-alpine3.23@sha256:89ba306d54a9025da2e7862ff22ae13a95d825a0e459217138242115dfc700a5 AS runtime
 
-# corepack is broken https://github.com/nodejs/corepack/issues/612
-# corepack was fixed but is will be removed from node from v25+
-# TODO: re-add corepack after it's been removed
-# RUN npm install -g corepack@latest
+# renovate: datasource=docker depName=dhi.io/node
+ARG NODE_VERSION="26.2.0"
 
-# Install dependencies only when needed
+# Stage 1: Install dependencies only when needed
 FROM base AS deps
-# Check https://github.com/nodejs/docker-node/tree/b4117f9333da4138b03a546ec926ef50a31506c3#nodealpine to understand why libc6-compat might be needed.
-RUN apk add --no-cache libc6-compat
+
 WORKDIR /app
 
 ENV LEFTHOOK=0
 
 # Install dependencies based on the preferred package manager
-COPY package.json pnpm-lock.yaml ./
+COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 
-RUN corepack enable pnpm
-RUN pnpm install --frozen-lockfile
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+  pnpm runtime set node "$NODE_VERSION" -g && pnpm install --frozen-lockfile
 
-# Rebuild the source code only when needed
+# Stage 2: Build stage
 FROM base AS builder
+
 WORKDIR /app
+
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-RUN corepack enable pnpm
-RUN pnpm run build
+RUN pnpm runtime set node "$NODE_VERSION" -g \
+  && pnpm run build
 
-# Production image, copy all the files and run next
-FROM base AS runner
+# Stage 3: Production image
+FROM runtime
+
 WORKDIR /app
 
 ENV NODE_ENV=production
 
-RUN addgroup --system --gid 1001 nodejs
-RUN adduser --system --uid 1001 nuxtjs
-
-COPY --from=builder --chown=nuxtjs:nodejs /app/.output ./
+COPY --from=builder /app/.output ./
 
 USER nuxtjs
 
