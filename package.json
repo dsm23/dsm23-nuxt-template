@@ -29,7 +29,7 @@
     "@total-typescript/ts-reset": "0.6.1",
     "knip": "6.24.0",
     "lefthook": "2.1.9",
-    "oxfmt": "0.57.0",
+    "oxfmt": "0.58.0",
     "typed-query-selector": "2.12.2"
   },
   "packageManager": "pnpm@11.10.0+sha512.0b7f8b98060031904c017e3a41eb187a16d40eeb829b95c4f8cb03681761fc4ab53dd219115b9b447f4dce1a05a214764461e7d3703392a9f32f9511ce8c86c8"
