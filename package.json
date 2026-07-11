@@ -28,7 +28,7 @@
     "@commitlint/types": "21.2.0",
     "@total-typescript/ts-reset": "0.6.1",
     "knip": "6.25.0",
-    "lefthook": "2.1.9",
+    "lefthook": "2.1.10",
     "oxfmt": "0.58.0",
     "typed-query-selector": "2.12.2"
   },
