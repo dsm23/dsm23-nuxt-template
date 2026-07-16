@@ -1,6 +1,6 @@
 # syntax=docker.io/docker/dockerfile:1@sha256:87999aa3d42bdc6bea60565083ee17e86d1f3339802f543c0d03998580f9cb89
 
-FROM ghcr.io/pnpm/pnpm:11.13.0@sha256:cd8efe9bf47d8e4ea97c3fdc9a42650dc28619a11b486ade5d547fd2182eb98f AS base
+FROM ghcr.io/pnpm/pnpm:11.13.1@sha256:ed3fbca56b39f0de753c15ffa352909a0e30056a1ed19e820903b9b73a1922bc AS base
 FROM dhi.io/node:26.1.0-alpine3.23@sha256:89ba306d54a9025da2e7862ff22ae13a95d825a0e459217138242115dfc700a5 AS runtime
 
 # renovate: datasource=docker depName=dhi.io/node
